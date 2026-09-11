@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#F3F6F6">
-  <title>Meet Aula · Componentes</title>
+  <title>Live Class · Componentes</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=Figtree:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
@@ -24,7 +24,7 @@
     .row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}.stack{display:grid;gap:14px}.tokens{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
     .token{overflow:hidden;border:1px solid var(--ma-line);border-radius:12px;background:#fff}.token__swatch{height:54px;background:var(--swatch)}.token__meta{display:grid;gap:2px;padding:9px}.token__name{overflow:hidden;font-size:.72rem;font-weight:700;text-overflow:ellipsis;white-space:nowrap}.token__hex{color:var(--ma-ink-soft);font:500 .66rem/1.2 var(--ma-font-mono)}
     .form-demo{max-width:520px}.stage-demo{position:relative;min-height:220px;overflow:hidden;display:grid;align-content:end;border-radius:14px;background:radial-gradient(90% 80% at 50% 28%,var(--ma-stage-2),var(--ma-stage));padding:12px}.stage-demo .ma-reaction-tray{position:relative;z-index:2;width:max-content;max-width:100%;margin-inline:auto}.reaction-sample{display:flex;align-items:center;min-height:62px;border-radius:12px;background:var(--ma-stage);padding:12px}
-    body[data-demo-state="controles"] .demo-control{border-color:#79C5BE;background:var(--ma-teal-soft);color:#103D3A}body[data-demo-state="oferta"] .demo-offer{box-shadow:0 0 0 3px rgba(31,168,77,.14),var(--ma-shadow-md)}body[data-demo-state="reacoes"] .reaction-card{box-shadow:0 0 0 3px rgba(11,122,117,.16),var(--ma-shadow-md)}
+    body[data-demo-state="controles"] .demo-control{border-color:#00C7C2;background:var(--ma-teal-soft);color:#00031F}body[data-demo-state="oferta"] .demo-offer{box-shadow:0 0 0 3px rgba(31,168,77,.14),var(--ma-shadow-md)}body[data-demo-state="reacoes"] .reaction-card{box-shadow:0 0 0 3px rgba(11,92,255,.16),var(--ma-shadow-md)}
     @media(min-width:760px){.page__header,.page__main{width:min(1180px,calc(100% - 64px))}.tokens{grid-template-columns:repeat(5,minmax(0,1fr))}}
     @media(min-width:1040px){.page__main{grid-template-columns:repeat(12,minmax(0,1fr))}.span-12{grid-column:span 12}.span-7{grid-column:span 7}.span-6{grid-column:span 6}.span-5{grid-column:span 5}}
   </style>
@@ -33,24 +33,24 @@
 <div class="page">
   <header class="page__header">
     <div class="topline">
-      <div class="ma-brand"><span class="ma-brand__mark" aria-hidden="true"></span><span>Meet Aula</span></div>
+      <div class="ma-brand"><span class="ma-brand__mark" aria-hidden="true"></span><span>Live Class</span></div>
       <label class="state-picker"><span>estado</span><select id="statePicker" aria-label="Alternar estado de demonstração"><option value="padrao">padrão</option><option value="erro">erro</option><option value="controles">controles</option><option value="oferta">oferta</option><option value="reacoes">reações</option></select></label>
     </div>
-    <div class="intro"><p class="ma-kicker">Tela 0 · sistema de webinar gravado</p><h1 class="ma-display">Folha de componentes</h1><p>Base visual da plataforma Meet Aula. O Método VSP entra apenas como conteúdo do evento e na cor configurável do botão da oferta.</p></div>
+    <div class="intro"><p class="ma-kicker">Tela 0 · sistema de webinar gravado</p><h1 class="ma-display">Folha de componentes</h1><p>Base visual da plataforma Live Class. O Método VSP entra apenas como conteúdo do evento e na cor configurável do botão da oferta.</p></div>
   </header>
 
   <main class="page__main">
     <section class="card span-12" aria-labelledby="tokens-title"><div class="card__head"><h2 id="tokens-title">Tokens principais</h2><p class="card__desc">Identidade própria da plataforma, separada da marca do tenant.</p></div><div class="tokens">
       <div class="token"><div class="token__swatch" style="--swatch:var(--ma-ink)"></div><div class="token__meta"><span class="token__name">--ma-ink</span><span class="token__hex">#14191F</span></div></div>
-      <div class="token"><div class="token__swatch" style="--swatch:var(--ma-teal)"></div><div class="token__meta"><span class="token__name">--ma-teal</span><span class="token__hex">#0B7A75</span></div></div>
-      <div class="token"><div class="token__swatch" style="--swatch:var(--ma-teal-soft)"></div><div class="token__meta"><span class="token__name">--ma-teal-soft</span><span class="token__hex">#9FDCD4</span></div></div>
+      <div class="token"><div class="token__swatch" style="--swatch:var(--ma-teal)"></div><div class="token__meta"><span class="token__name">--ma-teal</span><span class="token__hex">#0B5CFF</span></div></div>
+      <div class="token"><div class="token__swatch" style="--swatch:var(--ma-teal-soft)"></div><div class="token__meta"><span class="token__name">--ma-teal-soft</span><span class="token__hex">#00EDE7</span></div></div>
       <div class="token"><div class="token__swatch" style="--swatch:var(--ma-stage)"></div><div class="token__meta"><span class="token__name">--ma-stage</span><span class="token__hex">#0F1617</span></div></div>
       <div class="token"><div class="token__swatch" style="--swatch:var(--tenant-accent)"></div><div class="token__meta"><span class="token__name">--tenant-accent</span><span class="token__hex">#1FA84D</span></div></div>
     </div></section>
 
-    <section class="card span-6" aria-labelledby="buttons-title"><div class="card__head"><h2 id="buttons-title">Botões</h2><p class="card__desc">Primário teal, secundário e perigo.</p></div><div class="row"><button class="ma-btn ma-btn--primary" type="button">Garantir minha vaga</button><button class="ma-btn ma-btn--secondary" type="button">Ver detalhes</button><button class="ma-btn ma-btn--danger" type="button">Sair</button></div></section>
+    <section class="card span-6" aria-labelledby="buttons-title"><div class="card__head"><h2 id="buttons-title">Botões</h2><p class="card__desc">Primário azul, secundário e perigo.</p></div><div class="row"><button class="ma-btn ma-btn--primary" type="button">Garantir minha vaga</button><button class="ma-btn ma-btn--secondary" type="button">Ver detalhes</button><button class="ma-btn ma-btn--danger" type="button">Sair</button></div></section>
 
-    <section class="card span-6" aria-labelledby="controls-title"><div class="card__head"><h2 id="controls-title">Controles redondos</h2><p class="card__desc">Lucide em todos os estados: normal, ativo em teal claro e desligado em vermelho.</p></div><div class="row">
+    <section class="card span-6" aria-labelledby="controls-title"><div class="card__head"><h2 id="controls-title">Controles redondos</h2><p class="card__desc">Lucide em todos os estados: normal, ativo em ciano e desligado em vermelho.</p></div><div class="row">
       <button class="ma-control" type="button" aria-label="Reações"><svg class="ma-icon" aria-hidden="true"><use href="./icons.svg#heart"/></svg></button>
       <button class="ma-control ma-control--active demo-control" type="button" aria-label="Legendas ativas"><svg class="ma-icon" aria-hidden="true"><use href="./icons.svg#captions"/></svg></button>
       <button class="ma-control ma-control--off" type="button" aria-label="Microfone desligado"><svg class="ma-icon" aria-hidden="true"><use href="./icons.svg#mic-off"/></svg></button>
