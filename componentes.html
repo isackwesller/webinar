@@ -23,8 +23,8 @@
     .card__head{display:grid;gap:5px;margin-bottom:16px}.card h2{margin:0;font:700 1.05rem/1.2 var(--ma-font-display)}.card__desc{margin:0;color:var(--ma-ink-soft);font-size:.8rem}
     .row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}.stack{display:grid;gap:14px}.tokens{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
     .token{overflow:hidden;border:1px solid var(--ma-line);border-radius:12px;background:#fff}.token__swatch{height:54px;background:var(--swatch)}.token__meta{display:grid;gap:2px;padding:9px}.token__name{overflow:hidden;font-size:.72rem;font-weight:700;text-overflow:ellipsis;white-space:nowrap}.token__hex{color:var(--ma-ink-soft);font:500 .66rem/1.2 var(--ma-font-mono)}
-    .form-demo{max-width:520px}.stage-demo{position:relative;min-height:220px;overflow:hidden;display:grid;align-content:end;border-radius:14px;background:radial-gradient(90% 80% at 50% 28%,var(--ma-stage-2),var(--ma-stage));padding:12px}.stage-demo .ma-reaction-tray{position:relative;z-index:2;width:max-content;max-width:100%;margin-inline:auto}
-    .demo-error{display:none}body[data-demo-state="erro"] .demo-field{border-color:var(--ma-signal);background:#FFF8F7}body[data-demo-state="erro"] .demo-error{display:block}body[data-demo-state="controles"] .demo-control{border-color:#79C5BE;background:var(--ma-teal-soft);color:#103D3A}body[data-demo-state="oferta"] .demo-offer{box-shadow:0 0 0 3px rgba(31,168,77,.14),var(--ma-shadow-md)}body[data-demo-state="reacoes"] .reaction-card{box-shadow:0 0 0 3px rgba(11,122,117,.16),var(--ma-shadow-md)}
+    .form-demo{max-width:520px}.stage-demo{position:relative;min-height:220px;overflow:hidden;display:grid;align-content:end;border-radius:14px;background:radial-gradient(90% 80% at 50% 28%,var(--ma-stage-2),var(--ma-stage));padding:12px}.stage-demo .ma-reaction-tray{position:relative;z-index:2;width:max-content;max-width:100%;margin-inline:auto}.reaction-sample{display:flex;align-items:center;min-height:62px;border-radius:12px;background:var(--ma-stage);padding:12px}
+    body[data-demo-state="controles"] .demo-control{border-color:#79C5BE;background:var(--ma-teal-soft);color:#103D3A}body[data-demo-state="oferta"] .demo-offer{box-shadow:0 0 0 3px rgba(31,168,77,.14),var(--ma-shadow-md)}body[data-demo-state="reacoes"] .reaction-card{box-shadow:0 0 0 3px rgba(11,122,117,.16),var(--ma-shadow-md)}
     @media(min-width:760px){.page__header,.page__main{width:min(1180px,calc(100% - 64px))}.tokens{grid-template-columns:repeat(5,minmax(0,1fr))}}
     @media(min-width:1040px){.page__main{grid-template-columns:repeat(12,minmax(0,1fr))}.span-12{grid-column:span 12}.span-7{grid-column:span 7}.span-6{grid-column:span 6}.span-5{grid-column:span 5}}
   </style>
@@ -50,39 +50,33 @@
 
     <section class="card span-6" aria-labelledby="buttons-title"><div class="card__head"><h2 id="buttons-title">Botões</h2><p class="card__desc">Primário teal, secundário e perigo.</p></div><div class="row"><button class="ma-btn ma-btn--primary" type="button">Garantir minha vaga</button><button class="ma-btn ma-btn--secondary" type="button">Ver detalhes</button><button class="ma-btn ma-btn--danger" type="button">Sair</button></div></section>
 
-    <section class="card span-6" aria-labelledby="controls-title"><div class="card__head"><h2 id="controls-title">Controles redondos</h2><p class="card__desc">Normal, ativo em teal claro e desligado em vermelho sinal.</p></div><div class="row">
-      <button class="ma-control" type="button" aria-label="Reações"><svg class="ma-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></svg></button>
-      <button class="ma-control ma-control--active demo-control" type="button" aria-label="Legendas ativas"><svg class="ma-icon" viewBox="0 0 24 24" aria-hidden="true"><rect width="18" height="14" x="3" y="5" rx="2"/><path d="M7 15h4M13 15h4M7 11h2M11 11h6"/></svg></button>
-      <button class="ma-control ma-control--off" type="button" aria-label="Microfone desligado"><svg class="ma-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m2 2 20 20M9 9v3a3 3 0 0 0 5.12 2.12M15 9V5a3 3 0 0 0-5.94-.6M5 10v2a7 7 0 0 0 11.9 5M19 10v2a7 7 0 0 1-.37 2.25M12 19v3M8 22h8"/></svg></button>
+    <section class="card span-6" aria-labelledby="controls-title"><div class="card__head"><h2 id="controls-title">Controles redondos</h2><p class="card__desc">Lucide em todos os estados: normal, ativo em teal claro e desligado em vermelho.</p></div><div class="row">
+      <button class="ma-control" type="button" aria-label="Reações"><svg class="ma-icon" aria-hidden="true"><use href="./icons.svg#heart"/></svg></button>
+      <button class="ma-control ma-control--active demo-control" type="button" aria-label="Legendas ativas"><svg class="ma-icon" aria-hidden="true"><use href="./icons.svg#captions"/></svg></button>
+      <button class="ma-control ma-control--off" type="button" aria-label="Microfone desligado"><svg class="ma-icon" aria-hidden="true"><use href="./icons.svg#mic-off"/></svg></button>
     </div></section>
 
     <section class="card span-7" aria-labelledby="fields-title"><div class="card__head"><h2 id="fields-title">Campos</h2><p class="card__desc">Rótulos sempre visíveis, erro direto e WhatsApp com DDI +55.</p></div><div class="stack form-demo">
       <div class="ma-field"><label class="ma-field__label" for="nome">Seu nome</label><input class="ma-input" id="nome" name="nome" type="text" autocomplete="name" value="Carla Menezes"></div>
-      <div class="ma-field"><label class="ma-field__label" for="email">E-mail</label><input class="ma-input demo-field" id="email" name="email" type="email" autocomplete="email" value="carla@" aria-describedby="email-error"><p class="ma-field__error demo-error" id="email-error">Digite um e-mail válido, como nome@exemplo.com.</p></div>
+      <div class="ma-field" id="emailField"><label class="ma-field__label" for="email">E-mail</label><input class="ma-input" id="email" name="email" type="email" autocomplete="email" value="carla@" aria-describedby="email-error"><p class="ma-field__error" id="email-error">Digite um e-mail válido, como nome@exemplo.com.</p></div>
       <div class="ma-field"><label class="ma-field__label" for="whatsapp">WhatsApp</label><div class="ma-phone"><div><label class="ma-sr-only" for="ddi">Código do país</label><select class="ma-select" id="ddi" name="ddi"><option selected value="+55">+55</option></select></div><input class="ma-input" id="whatsapp" name="whatsapp" type="tel" inputmode="tel" autocomplete="tel-national" value="(71) 99988-7766"></div><p class="ma-field__hint">Usaremos este número apenas para avisos relacionados à aula.</p></div>
     </div></section>
 
     <section class="card span-5" aria-labelledby="chips-title"><div class="card__head"><h2 id="chips-title">Chips e avatar</h2><p class="card__desc">Seleções rápidas e identificação por inicial.</p></div><div class="stack"><div class="ma-chips"><span class="ma-chip ma-chip--selected">Confeitaria</span><span class="ma-chip">Pet shop</span><span class="ma-chip">Clínica</span><span class="ma-chip">Loja local</span></div><div class="row"><span class="ma-avatar" aria-label="Carla Menezes">CM</span><span class="ma-avatar" aria-label="Doces da Nena">DN</span><span class="ma-avatar" aria-label="Equipe VSP">EV</span></div></div></section>
 
-    <section class="card span-7" aria-labelledby="messages-title"><div class="card__head"><h2 id="messages-title">Mensagens</h2><p class="card__desc">Webchat compacto como a maquete do manual: participante, equipe e recado fixado.</p></div><div class="ma-chat-list">
-      <article class="ma-message"><span class="ma-avatar" aria-hidden="true">CM</span><div class="ma-message__content"><div class="ma-message__meta"><span class="ma-message__name">Carla Menezes</span><time class="ma-message__time">20:11</time></div><div class="ma-message__bubble"><p class="ma-message__text">sou de Salvador, BA</p></div></div></article>
-      <article class="ma-message"><span class="ma-avatar" aria-hidden="true">DN</span><div class="ma-message__content"><div class="ma-message__meta"><span class="ma-message__name">Doces da Nena</span><time class="ma-message__time">20:12</time></div><div class="ma-message__bubble"><p class="ma-message__text">faço bolo por encomenda, serve pra mim?</p></div></div></article>
-      <article class="ma-message ma-message--team"><span class="ma-avatar" aria-hidden="true">EV</span><div class="ma-message__content"><div class="ma-message__meta"><span class="ma-message__name">Equipe VSP</span><time class="ma-message__time">20:12</time></div><div class="ma-message__bubble"><p class="ma-message__text">Serve sim, Nena! Daqui a pouco ele mostra um exemplo de confeitaria.</p></div></div></article>
-      <article class="ma-message ma-message--pinned"><div class="ma-message__content"><div class="ma-pin-label"><svg class="ma-icon" style="width:13px;height:13px" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 17-5 5M5 2l6 6M14 3l7 7-4 4-3-1-4 4-3-3 4-4-1-3 4-4Z"/></svg>Equipe VSP · fixada</div><p class="ma-message__text">Dúvida de acesso? Escreva aqui que a equipe responde.</p></div></article>
+    <section class="card span-7" aria-labelledby="messages-title"><div class="card__head"><h2 id="messages-title">Mensagens</h2><p class="card__desc">Webchat compacto: participante, equipe e recado fixado sem desperdiçar altura.</p></div><div class="ma-chat-list">
+      <article class="ma-message"><span class="ma-avatar" aria-hidden="true">CM</span><div class="ma-message__content"><div class="ma-message__meta"><span class="ma-message__name">Carla Menezes</span><time class="ma-message__time">20:11</time></div><p class="ma-message__text">sou de Salvador, BA</p></div></article>
+      <article class="ma-message"><span class="ma-avatar" aria-hidden="true">DN</span><div class="ma-message__content"><div class="ma-message__meta"><span class="ma-message__name">Doces da Nena</span><time class="ma-message__time">20:12</time></div><p class="ma-message__text">faço bolo por encomenda, serve pra mim?</p></div></article>
+      <article class="ma-message ma-message--team"><span class="ma-avatar" aria-hidden="true">EV</span><div class="ma-message__content"><div class="ma-message__meta"><span class="ma-message__name">Equipe VSP</span><time class="ma-message__time">20:12</time></div><p class="ma-message__text">Serve sim, Nena! Daqui a pouco ele mostra um exemplo de confeitaria.</p></div></article>
+      <article class="ma-message ma-message--pinned"><div class="ma-message__content"><div class="ma-pin-label"><svg class="ma-icon" style="width:13px;height:13px" aria-hidden="true"><use href="./icons.svg#pin"/></svg>Equipe VSP · fixada</div><p class="ma-message__text">Dúvida de acesso? Escreva aqui que a equipe responde.</p></div></article>
     </div></section>
 
     <section class="card span-5" aria-labelledby="offer-title"><div class="card__head"><h2 id="offer-title">Card de oferta do tenant</h2><p class="card__desc">A estrutura é da plataforma; somente o CTA usa <span class="ma-mono">--tenant-accent</span>.</p></div><article class="ma-offer-card demo-offer"><div class="ma-offer-card__top"><span class="ma-offer-card__tag">Oferta desta sessão</span><span class="ma-offer-card__deadline">fecha às 23:59</span></div><div class="ma-offer-card__body"><div><p class="ma-offer-card__title">Master VSP</p><p class="ma-offer-card__old">De R$ 1.299 por</p></div><div class="ma-offer-card__price"><span>12x de</span><strong>R$ 51,41</strong></div><button class="ma-btn" type="button">Quero aproveitar</button></div></article></section>
 
-    <section class="card span-6 reaction-card" aria-labelledby="reaction-title"><div class="card__head"><h2 id="reaction-title">Reações e toast</h2><p class="card__desc">Reações sobem com nome; no celular a bandeja rola horizontalmente.</p></div><div class="stack"><div class="ma-toast" role="status" aria-live="polite"><span class="ma-toast__icon" aria-hidden="true"><svg class="ma-icon" style="width:15px;height:15px" viewBox="0 0 24 24"><path d="m20 6-11 11-5-5"/></svg></span><p class="ma-toast__text"><strong>Marcos, de Joinville,</strong> entrou no Master VSP.</p></div><div class="stage-demo">
-      <div class="ma-reaction-cloud" aria-hidden="true">
-        <div class="ma-reaction-float" style="--reaction-x:4%;--reaction-y:10%"><span class="ma-reaction-float__emoji">💖</span><span class="ma-reaction-float__name">Ana Paula R.</span></div>
-        <div class="ma-reaction-float" style="--reaction-x:30%;--reaction-y:44%"><span class="ma-reaction-float__emoji">👏</span><span class="ma-reaction-float__name">Doces da Nena</span></div>
-        <div class="ma-reaction-float" style="--reaction-x:9%;--reaction-y:72%"><span class="ma-reaction-float__emoji">🔥</span><span class="ma-reaction-float__name">Marcos Teixeira</span></div>
-      </div>
-      <div class="ma-reaction-tray" aria-label="Escolher uma reação">
-        <button class="ma-reaction-option" type="button" aria-label="Coração">💖</button><button class="ma-reaction-option" type="button" aria-label="Curtir">👍</button><button class="ma-reaction-option" type="button" aria-label="Comemorar">🎉</button><button class="ma-reaction-option" type="button" aria-label="Aplaudir">👏</button><button class="ma-reaction-option" type="button" aria-label="Rir">😂</button><button class="ma-reaction-option" type="button" aria-label="Surpreso">😮</button><button class="ma-reaction-option" type="button" aria-label="Triste">😢</button><button class="ma-reaction-option" type="button" aria-label="Levantar a mão">🙋</button><button class="ma-reaction-option" type="button" aria-label="Fogo">🔥</button>
-      </div>
-    </div><div class="ma-reaction-pill"><span class="ma-reaction-pill__emoji">🔥</span><span class="ma-reaction-pill__name">Ana Paula R.</span></div></div></section>
+    <section class="card span-6 reaction-card" aria-labelledby="reaction-title"><div class="card__head"><h2 id="reaction-title">Reações e toast</h2><p class="card__desc">Reações sobem com nome; no celular a bandeja rola horizontalmente.</p></div><div class="stack"><div class="ma-toast" role="status" aria-live="polite"><span class="ma-toast__icon" aria-hidden="true"><svg class="ma-icon" style="width:15px;height:15px"><use href="./icons.svg#check"/></svg></span><p class="ma-toast__text"><strong>Marcos, de Joinville,</strong> entrou no Master VSP.</p></div><div class="stage-demo">
+      <div class="ma-reaction-cloud" aria-hidden="true"><div class="ma-reaction-float" style="--reaction-x:4%;--reaction-y:10%"><span class="ma-reaction-float__emoji">💖</span><span class="ma-reaction-float__name">Ana Paula R.</span></div><div class="ma-reaction-float" style="--reaction-x:30%;--reaction-y:44%"><span class="ma-reaction-float__emoji">👏</span><span class="ma-reaction-float__name">Doces da Nena</span></div><div class="ma-reaction-float" style="--reaction-x:9%;--reaction-y:72%"><span class="ma-reaction-float__emoji">🔥</span><span class="ma-reaction-float__name">Marcos Teixeira</span></div></div>
+      <div class="ma-reaction-tray" aria-label="Escolher uma reação"><button class="ma-reaction-option" type="button" aria-label="Coração">💖</button><button class="ma-reaction-option" type="button" aria-label="Curtir">👍</button><button class="ma-reaction-option" type="button" aria-label="Comemorar">🎉</button><button class="ma-reaction-option" type="button" aria-label="Aplaudir">👏</button><button class="ma-reaction-option" type="button" aria-label="Rir">😂</button><button class="ma-reaction-option" type="button" aria-label="Surpreso">😮</button><button class="ma-reaction-option" type="button" aria-label="Triste">😢</button><button class="ma-reaction-option" type="button" aria-label="Levantar a mão">🙋</button><button class="ma-reaction-option" type="button" aria-label="Fogo">🔥</button></div>
+    </div><div class="reaction-sample"><div class="ma-reaction-pill"><span class="ma-reaction-pill__emoji">🔥</span><span class="ma-reaction-pill__name">Ana Paula R.</span></div></div></div></section>
 
     <section class="card span-6" aria-labelledby="countdown-title"><div class="card__head"><h2 id="countdown-title">Contagem regressiva</h2><p class="card__desc">Tempo legível e código em IBM Plex Mono.</p></div><div class="stack"><div class="ma-countdown" role="timer" aria-label="Faltam oito minutos e doze segundos"><span class="ma-countdown__label">A sala abre em</span><span class="ma-countdown__time">08:12</span></div><div><p class="ma-kicker" style="margin-bottom:6px">Ponto da oferta</p><span class="ma-mono">01:23:50</span></div></div></section>
   </main>
@@ -91,17 +85,23 @@
 (() => {
   const valid = new Set(['padrao','erro','controles','oferta','reacoes']);
   const params = new URLSearchParams(location.search);
-  const requested = params.get('estado') || 'padrao';
-  const state = valid.has(requested) ? requested : 'padrao';
-  document.body.dataset.demoState = state;
+  const state = valid.has(params.get('estado')) ? params.get('estado') : 'padrao';
   const picker = document.getElementById('statePicker');
-  picker.value = state;
-  picker.addEventListener('change', event => {
-    const next = event.target.value;
-    const url = new URL(location.href);
-    url.searchParams.set('estado', next);
-    history.replaceState({}, '', url);
+  const emailField = document.getElementById('emailField');
+  const email = document.getElementById('email');
+  function apply(next){
     document.body.dataset.demoState = next;
+    picker.value = next;
+    const isError = next === 'erro';
+    emailField.classList.toggle('is-error', isError);
+    email.setAttribute('aria-invalid', isError ? 'true' : 'false');
+  }
+  apply(state);
+  picker.addEventListener('change', event => {
+    const url = new URL(location.href);
+    url.searchParams.set('estado', event.target.value);
+    history.replaceState({}, '', url);
+    apply(event.target.value);
   });
 })();
 </script>
