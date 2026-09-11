@@ -1,4 +1,4 @@
-# Meet Aula
+# Live Class
 
 Protótipo estático da plataforma independente de webinar gravado.
 
@@ -8,8 +8,9 @@ Protótipo estático da plataforma independente de webinar gravado.
 - `componentes.html` — Tela 0 / folha de componentes
 - `tokens.css` — design tokens da plataforma
 - `components.css` — componentes compartilhados
+- `icons.svg` — sprite único de ícones funcionais e marcas
 - `.github/workflows/pages.yml` — publicação automática no GitHub Pages
 
-A interface da plataforma usa a identidade Meet Aula. O Método VSP é o primeiro tenant e aparece apenas no conteúdo configurável do evento.
+A interface da plataforma usa a identidade Live Class. O Método VSP é o primeiro tenant e aparece apenas no conteúdo configurável do evento.
 
-Versão atual: `0.1.0`.
+Versão atual: `0.17.0`.
