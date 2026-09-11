@@ -10,17 +10,32 @@
   <link rel="stylesheet" href="./tokens.css">
   <link rel="stylesheet" href="./components.css">
   <style>
-    body{background:var(--ma-mist)}.home{width:min(760px,calc(100% - 32px));margin:0 auto;padding:34px 0 64px}.top{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:72px}.version{color:var(--ma-ink-soft);font-size:.75rem}.hero{display:grid;gap:16px}.hero p{margin:0;max-width:620px;color:var(--ma-ink-soft);font-size:1.05rem}.screens{display:grid;gap:10px;margin-top:32px}.screen{display:flex;align-items:center;justify-content:space-between;gap:16px;border:1px solid var(--ma-line);border-radius:14px;background:#fff;padding:15px 16px;color:var(--ma-ink);text-decoration:none;box-shadow:var(--ma-shadow-sm)}.screen:hover{border-color:#AFCBC8}.screen strong{display:block}.screen span{color:var(--ma-ink-soft);font-size:.8rem}.screen svg{color:var(--ma-teal)}
+    body{background:var(--ma-mist)}.home{width:min(900px,calc(100% - 32px));margin:0 auto;padding:34px 0 64px}.top{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:64px}.version{color:var(--ma-ink-soft);font-size:.75rem}.hero{display:grid;gap:16px}.hero p{margin:0;max-width:680px;color:var(--ma-ink-soft);font-size:1.05rem}.group{margin-top:34px}.group h2{margin:0 0 10px;font:700 1.08rem/1.1 var(--ma-font-display)}.group p{margin:0 0 14px;color:var(--ma-ink-soft);font-size:.78rem}.screens{display:grid;gap:10px}.screen{display:flex;align-items:center;justify-content:space-between;gap:16px;border:1px solid var(--ma-line);border-radius:14px;background:#fff;padding:15px 16px;color:var(--ma-ink);text-decoration:none;box-shadow:var(--ma-shadow-sm);transition:transform var(--ma-transition),border-color var(--ma-transition)}.screen:hover{border-color:#AFCBC8;transform:translateY(-1px)}.screen strong{display:block}.screen span{color:var(--ma-ink-soft);font-size:.8rem}.screen svg{color:var(--ma-teal);flex:0 0 auto}@media(min-width:760px){.screens{grid-template-columns:repeat(2,minmax(0,1fr))}}
   </style>
 </head>
 <body>
   <main class="home">
-    <div class="top"><div class="ma-brand"><span class="ma-brand__mark" aria-hidden="true"></span><span>Meet Aula</span></div><span class="version">protótipo · v0.3.0</span></div>
-    <section class="hero"><p class="ma-kicker">Plataforma de webinar gravado</p><h1 class="ma-display">Protótipo navegável</h1><p>As telas serão adicionadas aqui uma a uma. A interface é da plataforma Meet Aula; o Método VSP aparece apenas como conteúdo do primeiro evento.</p></section>
-    <nav class="screens" aria-label="Telas disponíveis">
-      <a class="screen" href="./componentes.html"><div><strong>Tela 0 · Componentes</strong><span>Tokens, botões, campos, chat, oferta e controles</span></div><svg class="ma-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      <a class="screen" href="./e/oferta-semente/"><div><strong>Tela 1 · Inscrição</strong><span>Evento, próxima aula, benefícios e formulário obrigatório</span></div><svg class="ma-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-    </nav>
+    <div class="top"><div class="ma-brand"><span class="ma-brand__mark" aria-hidden="true"></span><span>Meet Aula</span></div><span class="version">protótipo · v0.13.0</span></div>
+    <section class="hero"><p class="ma-kicker">Plataforma de webinar gravado</p><h1 class="ma-display">Protótipo navegável</h1><p>Treze telas estáticas para revisar a experiência pública, a sala e o backoffice. A interface é do Meet Aula; o Método VSP aparece apenas como conteúdo do primeiro evento.</p></section>
+
+    <section class="group"><h2>Experiência pública</h2><p>Da inscrição ao encerramento da sessão.</p><nav class="screens" aria-label="Telas públicas">
+      <a class="screen" href="./componentes.html"><div><strong>Tela 0 · Componentes</strong><span>Tokens, botões, campos, chat, oferta e controles</span></div><svg class="ma-icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="screen" href="./e/oferta-semente/"><div><strong>Tela 1 · Inscrição</strong><span>Evento, próxima aula, benefícios e formulário</span></div><svg class="ma-icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="screen" href="./e/oferta-semente/ok/"><div><strong>Tela 2 · Confirmação</strong><span>WhatsApp, calendários e magic link pessoal</span></div><svg class="ma-icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="screen" href="./s/7KQ2/"><div><strong>Tela 3 · Sala de espera</strong><span>Prévia, contagem regressiva e entrada</span></div><svg class="ma-icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="screen" href="./s/7KQ2/sala-desktop.html"><div><strong>Tela 4 · Sala desktop</strong><span>Palco, chat, oferta, reações e controles</span></div><svg class="ma-icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="screen" href="./s/7KQ2/sala-mobile.html"><div><strong>Tela 5 · Sala mobile</strong><span>Vídeo, oferta fixa, chat e bottom sheet</span></div><svg class="ma-icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="screen" href="./s/7KQ2/estados.html"><div><strong>Tela 6 · Estados da sala</strong><span>Sete situações operacionais em miniaturas</span></div><svg class="ma-icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="screen" href="./s/7KQ2/encerrada.html"><div><strong>Tela 7 · Encerrada</strong><span>Fim da aula, oferta e próxima sessão</span></div><svg class="ma-icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </nav></section>
+
+    <section class="group"><h2>Backoffice</h2><p>Operação, importação, edição, moderação e envios.</p><nav class="screens" aria-label="Telas do backoffice">
+      <a class="screen" href="./app/dashboard.html"><div><strong>Tela 8 · Dashboard</strong><span>Funil, KPIs, retenção e sessões</span></div><svg class="ma-icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="screen" href="./app/importar.html"><div><strong>Tela 9 · Importar</strong><span>Google Drive em quatro passos</span></div><svg class="ma-icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="screen" href="./app/editor.html"><div><strong>Tela 10 · Editor</strong><span>Agenda e timeline sincronizada</span></div><svg class="ma-icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="screen" href="./app/moderacao.html"><div><strong>Tela 11 · Moderação</strong><span>Perguntas, chat e alta intenção</span></div><svg class="ma-icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="screen" href="./app/envios.html"><div><strong>Tela 12 · Envios</strong><span>Outbox e linha do tempo individual</span></div><svg class="ma-icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </nav></section>
   </main>
 </body>
 </html>
