@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@600;700&display=swap");
+
 :root {
   --ma-ink: #14191F;
   --ma-ink-soft: #5A6570;
@@ -13,7 +15,8 @@
   --tenant-accent: #1FA84D;
   --ma-white: #FFFFFF;
 
-  --ma-font-display: "Bricolage Grotesque", system-ui, sans-serif;
+  --ma-font-display: "Sora", system-ui, sans-serif;
+  --ma-font-brand: "Bricolage Grotesque", system-ui, sans-serif;
   --ma-font-body: "Figtree", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --ma-font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 
