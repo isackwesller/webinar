@@ -11,45 +11,29 @@
   <link rel="stylesheet" href="../../../tokens.css">
   <link rel="stylesheet" href="../../../components.css">
   <style>
-    body{background:var(--ma-mist)}
-    .page{min-height:100dvh;display:grid;grid-template-rows:auto 1fr auto}
-    .header,.main,.footer{width:min(720px,calc(100% - 32px));margin-inline:auto}
-    .header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:24px 0}
-    .state{font-size:.72rem;color:var(--ma-ink-soft)}.state select{margin-left:6px;border:1px solid var(--ma-line);border-radius:8px;background:#fff;padding:5px 8px;color:var(--ma-ink)}
-    .main{display:grid;align-content:start;padding:26px 0 54px}
-    .card{border:1px solid var(--ma-line);border-radius:20px;background:#fff;padding:22px;box-shadow:var(--ma-shadow-sm)}
-    .success{display:grid;width:48px;height:48px;place-items:center;border-radius:50%;background:var(--ma-teal-tint);color:var(--ma-teal-dark);margin-bottom:18px}
-    h1{margin:0;font:700 clamp(2rem,9vw,3.4rem)/1 var(--ma-font-display);letter-spacing:-.035em}
-    .lead{margin:10px 0 0;color:var(--ma-ink-soft)}
-    .session{display:flex;gap:12px;align-items:center;margin:22px 0 0;padding:14px;border-radius:14px;background:var(--ma-mist)}
-    .session__icon{display:grid;width:38px;height:38px;place-items:center;flex:0 0 auto;border-radius:10px;background:#fff;color:var(--ma-teal)}
-    .session strong{display:block}.session span{display:block;color:var(--ma-ink-soft);font-size:.84rem}
-    .actions{display:grid;gap:10px;margin-top:20px}.actions .ma-btn{width:100%}.ma-btn--whatsapp{background:var(--ma-teal);color:#fff}.ma-btn--whatsapp:hover{background:var(--ma-teal-dark)}
-    .calendar-grid{display:grid;gap:10px;margin-top:10px}
+    body{background:var(--ma-mist)}.page{min-height:100dvh;display:grid;grid-template-rows:auto 1fr auto}.header,.main,.footer{width:min(720px,calc(100% - 32px));margin-inline:auto}.header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:24px 0}.state{font-size:.72rem;color:var(--ma-ink-soft)}.state select{margin-left:6px;border:1px solid var(--ma-line);border-radius:8px;background:#fff;padding:5px 8px;color:var(--ma-ink)}
+    .main{display:grid;align-content:start;padding:26px 0 54px}.card{border:1px solid var(--ma-line);border-radius:20px;background:#fff;padding:22px;box-shadow:var(--ma-shadow-sm)}.success{display:grid;width:48px;height:48px;place-items:center;border-radius:50%;background:var(--ma-teal-tint);color:var(--ma-teal-dark);margin-bottom:18px}.success .ma-icon{width:24px;height:24px}
+    h1{margin:0;font:700 clamp(2rem,9vw,3.4rem)/1 var(--ma-font-display);letter-spacing:-.03em}.lead{margin:10px 0 0;color:var(--ma-ink-soft)}
+    .session{display:flex;gap:12px;align-items:center;margin:22px 0 0;padding:14px;border-radius:14px;background:var(--ma-mist)}.session__icon{display:grid;width:38px;height:38px;place-items:center;flex:0 0 auto;border-radius:10px;background:#fff;color:var(--ma-teal)}.session strong{display:block}.session span{display:block;color:var(--ma-ink-soft);font-size:.84rem}
+    .actions{display:grid;gap:10px;margin-top:20px}.actions .ma-btn{width:100%}.ma-btn--whatsapp{background:var(--ma-teal);color:#fff}.ma-btn--whatsapp:hover{background:var(--ma-teal-dark)}.calendar-grid{display:grid;gap:10px;margin-top:10px}.calendar-grid .ma-brand-icon{color:#4285F4}
     .divider{display:flex;align-items:center;gap:12px;margin:24px 0 16px;color:var(--ma-ink-soft);font-size:.75rem}.divider::before,.divider::after{content:"";height:1px;flex:1;background:var(--ma-line)}
-    .link-box{display:grid;gap:9px}.link-label{font-size:.8rem;font-weight:700}.link-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px}.magic{min-width:0;border:1px solid var(--ma-line);border-radius:10px;background:#fff;padding:12px;color:var(--ma-ink);font:500 .82rem/1.35 var(--ma-font-mono);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.copy{min-width:46px;padding-inline:13px}
-    .notice{margin:14px 0 0;color:var(--ma-ink-soft);font-size:.86rem}
-    .copied{display:none;margin:8px 0 0;color:var(--ma-teal-dark);font-size:.78rem;font-weight:700}body[data-demo-state="copiado"] .copied{display:block}
-    .footer{border-top:1px solid var(--ma-line);padding:20px 0 28px;color:var(--ma-ink-soft);font-size:.78rem;text-align:center}
+    .link-box{display:grid;gap:9px}.link-label{font-size:.8rem;font-weight:700}.link-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px}.magic{min-width:0;border:1px solid var(--ma-line);border-radius:10px;background:#fff;padding:12px;color:var(--ma-ink);font:500 .82rem/1.35 var(--ma-font-mono);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.copy{min-width:48px;padding-inline:13px}.notice{margin:14px 0 0;color:var(--ma-ink-soft);font-size:.86rem}.copied{display:none;margin:8px 0 0;color:var(--ma-teal-dark);font-size:.78rem;font-weight:700}body[data-demo-state="copiado"] .copied{display:block}.footer{border-top:1px solid var(--ma-line);padding:20px 0 28px;color:var(--ma-ink-soft);font-size:.78rem;text-align:center}
     @media(min-width:620px){.card{padding:30px}.calendar-grid{grid-template-columns:1fr 1fr}.main{padding-top:44px}}
   </style>
 </head>
 <body data-demo-state="padrao">
 <div class="page">
-  <header class="header"><div class="ma-brand"><span class="ma-brand__mark" aria-hidden="true"></span><span>Meet Aula</span></div><label class="state">estado<select id="statePicker" aria-label="Estado de demonstração"><option value="padrao">padrão</option><option value="copiado">link copiado</option></select></label></header>
-  <main class="main">
-    <section class="card" aria-labelledby="titulo">
-      <div class="success" aria-hidden="true"><svg class="ma-icon" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg></div>
-      <h1 id="titulo">Sua vaga está garantida</h1>
-      <p class="lead">Agora salve o acesso para entrar na aula sem procurar e-mail depois.</p>
-      <div class="session"><span class="session__icon" aria-hidden="true"><svg class="ma-icon" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></svg></span><div><strong>Hoje, às 18:50</strong><span>Horário de Brasília · Oferta-semente irresistível</span></div></div>
-      <div class="actions"><a class="ma-btn ma-btn--whatsapp" href="https://wa.me/?text=SALA%207KQ2" target="_blank" rel="noopener"><svg class="ma-brand-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>Receber meu link no WhatsApp</a></div>
-      <div class="calendar-grid"><button class="ma-btn ma-btn--secondary" type="button"><svg class="ma-brand-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.316 5.684H24v12.632h-5.684V5.684zM5.684 24h12.632v-5.684H5.684V24zM18.316 5.684V0H1.895A1.894 1.894 0 0 0 0 1.895v16.421h5.684V5.684h12.632zm-7.207 6.25v-.065c.272-.144.5-.349.687-.617s.279-.595.279-.982c0-.379-.099-.72-.3-1.025a2.05 2.05 0 0 0-.832-.714 2.703 2.703 0 0 0-1.197-.257c-.6 0-1.094.156-1.481.467-.386.311-.65.671-.793 1.078l1.085.452c.086-.249.224-.461.413-.633.189-.172.445-.257.767-.257.33 0 .602.088.816.264a.86.86 0 0 1 .322.703c0 .33-.12.589-.36.778-.24.19-.535.284-.886.284h-.567v1.085h.633c.407 0 .748.109 1.02.327.272.218.407.499.407.843 0 .336-.129.614-.387.832s-.565.327-.924.327c-.351 0-.651-.103-.897-.311-.248-.208-.422-.502-.521-.881l-1.096.452c.178.616.505 1.082.977 1.401.472.319.984.478 1.538.477a2.84 2.84 0 0 0 1.293-.291c.382-.193.684-.458.902-.794.218-.336.327-.72.327-1.149 0-.429-.115-.797-.344-1.105a2.067 2.067 0 0 0-.881-.689zm2.093-1.931.602.913L15 10.045v5.744h1.187V8.446h-.827l-2.158 1.557zM22.105 0h-3.289v5.184H24V1.895A1.894 1.894 0 0 0 22.105 0zm-3.289 23.5 4.684-4.684h-4.684V23.5zM0 22.105C0 23.152.848 24 1.895 24h3.289v-5.184H0v3.289z"/></svg>Adicionar ao Google Agenda</button><button class="ma-btn ma-btn--secondary" type="button"><svg class="ma-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M12 14v6M9 17h6"/></svg>Adicionar ao calendário do iPhone</button></div>
-      <div class="divider">seu acesso pessoal</div>
-      <div class="link-box"><span class="link-label">Magic link</span><div class="link-row"><div class="magic" id="magicLink">meet-aula.com/s/7KQ2</div><button class="ma-btn ma-btn--secondary copy" type="button" id="copyButton" aria-label="Copiar magic link"><svg class="ma-icon" viewBox="0 0 24 24"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button></div><p class="copied" role="status">Link copiado.</p></div>
-      <p class="notice">Se você perder esta, o mesmo link leva para a próxima.</p>
-    </section>
-  </main>
+  <header class="header"><a class="ma-brand" href="../../../" aria-label="Meet Aula"><span class="ma-brand__mark" aria-hidden="true"></span><span>Meet Aula</span></a><label class="state">estado<select id="statePicker" aria-label="Estado de demonstração"><option value="padrao">padrão</option><option value="copiado">link copiado</option></select></label></header>
+  <main class="main"><section class="card" aria-labelledby="titulo">
+    <div class="success" aria-hidden="true"><svg class="ma-icon"><use href="../../../icons.svg#circle-check-big"/></svg></div>
+    <h1 id="titulo">Sua vaga está garantida</h1><p class="lead">Agora salve o acesso para entrar na aula sem procurar e-mail depois.</p>
+    <div class="session"><span class="session__icon" aria-hidden="true"><svg class="ma-icon"><use href="../../../icons.svg#calendar-days"/></svg></span><div><strong>Hoje, às 18:50</strong><span>Horário de Brasília · Oferta-semente irresistível</span></div></div>
+    <div class="actions"><a class="ma-btn ma-btn--whatsapp" href="https://wa.me/?text=SALA%207KQ2" target="_blank" rel="noopener"><svg class="ma-brand-icon" aria-hidden="true"><use href="../../../icons.svg#brand-whatsapp"/></svg>Receber meu link no WhatsApp</a></div>
+    <div class="calendar-grid"><button class="ma-btn ma-btn--secondary" type="button"><svg class="ma-brand-icon" aria-hidden="true"><use href="../../../icons.svg#brand-google-calendar"/></svg>Adicionar ao Google Agenda</button><button class="ma-btn ma-btn--secondary" type="button"><svg class="ma-icon" aria-hidden="true"><use href="../../../icons.svg#calendar-plus"/></svg>Adicionar ao calendário do iPhone</button></div>
+    <div class="divider">seu acesso pessoal</div>
+    <div class="link-box"><span class="link-label">Magic link</span><div class="link-row"><div class="magic" id="magicLink">meet-aula.com/s/7KQ2</div><button class="ma-btn ma-btn--secondary copy" type="button" id="copyButton" aria-label="Copiar magic link"><svg class="ma-icon" aria-hidden="true"><use href="../../../icons.svg#copy"/></svg></button></div><p class="copied" role="status" aria-live="polite">Link copiado.</p></div>
+    <p class="notice">Se você perder esta, o mesmo link leva para a próxima.</p>
+  </section></main>
   <footer class="footer">Meet Aula · Termos · Privacidade</footer>
 </div>
 <script>
@@ -57,10 +41,11 @@
   const valid=new Set(['padrao','copiado']);
   const params=new URLSearchParams(location.search);
   const current=valid.has(params.get('estado'))?params.get('estado'):'padrao';
-  document.body.dataset.demoState=current;
-  const picker=document.getElementById('statePicker'); picker.value=current;
-  picker.addEventListener('change',e=>{const u=new URL(location.href);u.searchParams.set('estado',e.target.value);history.replaceState({},'',u);document.body.dataset.demoState=e.target.value});
-  document.getElementById('copyButton').addEventListener('click',async()=>{try{await navigator.clipboard.writeText('https://meet-aula.com/s/7KQ2')}catch(e){} const u=new URL(location.href);u.searchParams.set('estado','copiado');history.replaceState({},'',u);document.body.dataset.demoState='copiado';picker.value='copiado'});
+  const picker=document.getElementById('statePicker'); const copy=document.getElementById('copyButton');
+  const set=v=>{document.body.dataset.demoState=v;picker.value=v;const u=new URL(location.href);u.searchParams.set('estado',v);history.replaceState({},'',u)};
+  set(current);
+  picker.addEventListener('change',e=>set(e.target.value));
+  copy.addEventListener('click',async()=>{try{await navigator.clipboard.writeText('https://meet-aula.com/s/7KQ2')}catch(e){} copy.setAttribute('aria-label','Magic link copiado'); set('copiado');});
 })();
 </script>
 </body>
