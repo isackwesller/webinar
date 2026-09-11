@@ -52,6 +52,7 @@ a, button, input, select, textarea { -webkit-tap-highlight-color: transparent; }
   fill: currentColor;
   stroke: none;
 }
+.ma-brand-icon--whatsapp { color: var(--brand-whatsapp); }
 .ma-sr-only {
   position: absolute !important;
   width: 1px;
@@ -122,6 +123,8 @@ a, button, input, select, textarea { -webkit-tap-highlight-color: transparent; }
 .ma-btn--secondary:hover { background: var(--ma-mist); border-color: #C9D2D2; }
 .ma-btn--danger { background: var(--ma-signal); color: var(--ma-white); }
 .ma-btn--danger:hover { background: #B92F2B; }
+.ma-btn--whatsapp { background: var(--brand-whatsapp); color: var(--ma-white); }
+.ma-btn--whatsapp:hover { background: var(--brand-whatsapp-dark); }
 .ma-btn[disabled], .ma-btn[aria-disabled="true"] { cursor: not-allowed; opacity: .55; }
 
 /* Forms */
@@ -163,7 +166,7 @@ a, button, input, select, textarea { -webkit-tap-highlight-color: transparent; }
   font-size: .8rem;
   font-weight: 600;
 }
-.ma-chip--selected { border-color: #AFCBC8; background: var(--ma-teal-tint); color: var(--ma-teal-dark); }
+.ma-chip--selected { border-color: #AFC5FF; background: var(--ma-teal-tint); color: var(--ma-teal-dark); }
 
 /* Avatar */
 .ma-avatar {
@@ -231,7 +234,7 @@ a, button, input, select, textarea { -webkit-tap-highlight-color: transparent; }
   transition: background-color var(--ma-transition), border-color var(--ma-transition), color var(--ma-transition), box-shadow var(--ma-transition);
 }
 .ma-control:hover { background: var(--ma-mist); }
-.ma-control--active { border-color: #79C5BE; background: var(--ma-teal-soft); color: #103D3A; }
+.ma-control--active { border-color: #00C7C2; background: var(--ma-teal-soft); color: #00031F; }
 .ma-control--off { border-color: var(--ma-signal); background: var(--ma-signal); color: var(--ma-white); }
 
 /* Tenant offer: only the CTA uses tenant color */
