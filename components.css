@@ -47,10 +47,51 @@ a, button, input, select, textarea { -webkit-tap-highlight-color: transparent; }
   clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap;
 }
 
+/* Official Lucide glyphs for critical room controls.
+   These masks intentionally override any stale copied path in individual screens. */
+:where([aria-label="Microfone desligado"], [title="Microfone desligado"]) > .ma-icon,
+:where([aria-label="Câmera desligada"], [title="Câmera desligada"]) > .ma-icon,
+[aria-label="Sair"] > .ma-icon {
+  display: none;
+}
+
+:where([aria-label="Microfone desligado"], [title="Microfone desligado"])::before,
+:where([aria-label="Câmera desligada"], [title="Câmera desligada"])::before,
+[aria-label="Sair"]::before {
+  content: "";
+  display: block;
+  width: 19px;
+  height: 19px;
+  background: currentColor;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
+
+:where([aria-label="Microfone desligado"], [title="Microfone desligado"])::before {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 19v3'/%3E%3Cpath d='M15 9.34V5a3 3 0 0 0-5.68-1.33'/%3E%3Cpath d='M16.95 16.95A7 7 0 0 1 5 12v-2'/%3E%3Cpath d='M18.89 13.23A7 7 0 0 0 19 12v-2'/%3E%3Cpath d='m2 2 20 20'/%3E%3Cpath d='M9 9v3a3 3 0 0 0 5.12 2.12'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 19v3'/%3E%3Cpath d='M15 9.34V5a3 3 0 0 0-5.68-1.33'/%3E%3Cpath d='M16.95 16.95A7 7 0 0 1 5 12v-2'/%3E%3Cpath d='M18.89 13.23A7 7 0 0 0 19 12v-2'/%3E%3Cpath d='m2 2 20 20'/%3E%3Cpath d='M9 9v3a3 3 0 0 0 5.12 2.12'/%3E%3C/svg%3E");
+}
+
+:where([aria-label="Câmera desligada"], [title="Câmera desligada"])::before {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M10.66 6H14a2 2 0 0 1 2 2v2.5l5.248-3.062A.5.5 0 0 1 22 7.87v8.196'/%3E%3Cpath d='M16 16a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h2'/%3E%3Cpath d='m2 2 20 20'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M10.66 6H14a2 2 0 0 1 2 2v2.5l5.248-3.062A.5.5 0 0 1 22 7.87v8.196'/%3E%3Cpath d='M16 16a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h2'/%3E%3Cpath d='m2 2 20 20'/%3E%3C/svg%3E");
+}
+
+[aria-label="Sair"]::before {
+  width: 20px;
+  height: 20px;
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M10.1 13.9a14 14 0 0 0 3.732 2.668 1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2 18 18 0 0 1-12.728-5.272'/%3E%3Cpath d='M22 2 2 22'/%3E%3Cpath d='M4.76 13.582A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 .244.473'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M10.1 13.9a14 14 0 0 0 3.732 2.668 1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2 18 18 0 0 1-12.728-5.272'/%3E%3Cpath d='M22 2 2 22'/%3E%3Cpath d='M4.76 13.582A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 .244.473'/%3E%3C/svg%3E");
+}
+
 /* Brand */
 .ma-brand {
   display: inline-flex; align-items: center; gap: 10px; color: var(--ma-ink);
-  font: 700 1.08rem/1 var(--ma-font-display); letter-spacing: -.025em;
+  font: 700 1.08rem/1 var(--ma-font-brand); letter-spacing: -.025em;
 }
 .ma-brand__mark {
   position: relative; width: 31px; height: 31px; flex: 0 0 auto;
