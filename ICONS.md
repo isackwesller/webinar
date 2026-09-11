@@ -1,4 +1,4 @@
-# Meet Aula · sistema de ícones
+# Live Class · sistema de ícones
 
 ## Fonte única
 
@@ -24,7 +24,7 @@ Ajuste o caminho relativo conforme a pasta da tela.
 
 ## Marcas do protótipo
 
-- `brand-whatsapp`: glifo vetorial da marca; referência consultada no SVG Repo / Simple Icons.
+- `brand-whatsapp`: glifo vetorial da marca; referência consultada no SVG Repo / Simple Icons. Ações de WhatsApp usam o verde próprio da marca (`#25D366`).
 - `brand-google-drive`: glifo da marca usado na importação.
 - `brand-google-calendar`: glifo da marca usado em “Adicionar ao Google Agenda”.
 
