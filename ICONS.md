@@ -1,21 +1,37 @@
 # Meet Aula · sistema de ícones
 
+## Fonte única
+
+`/icons.svg` é a **única fonte de geometria dos ícones da interface**. As telas não devem copiar `<path>` de ícones, criar aproximações ou corrigir glifos via CSS mask.
+
+Uso de interface:
+
+```html
+<svg class="ma-icon" aria-hidden="true">
+  <use href="../icons.svg#heart" />
+</svg>
+```
+
+Ajuste o caminho relativo conforme a pasta da tela.
+
 ## Regra geral
 
-- Ícones funcionais da interface usam a família **Lucide**, em SVG inline, `viewBox="0 0 24 24"`, `stroke-width="2"`, `stroke-linecap="round"` e `stroke-linejoin="round"`.
-- A classe compartilhada é `.ma-icon` e nunca deve receber `fill` de marca.
-- Logos e marcas externas usam o glifo oficial da marca, em SVG preenchido, pela classe `.ma-brand-icon`.
-- Emojis são reservados para reações da sala.
+- Ícones funcionais usam **Lucide**, `24×24`, `stroke-width="2"`, `stroke-linecap="round"` e `stroke-linejoin="round"`.
+- `.ma-icon` é exclusiva para ícones de traço da interface.
+- Logos e marcas externas usam o glifo da própria marca através de `.ma-brand-icon` e símbolos `brand-*` do sprite.
+- Emojis são reservados para reações e ondas de reação da sala.
+- Um mesmo conceito usa sempre o mesmo símbolo em todas as telas.
 
-## Marcas usadas no protótipo
+## Marcas do protótipo
 
-- WhatsApp: glifo oficial/brand glyph em SVG; referência visual e licença consultadas no SVG Repo. A geometria incorporada no código é a versão vetorial pública mantida pelo Simple Icons.
-- Google Drive: glifo oficial/brand glyph em SVG, incorporado no botão de importação.
-- Google Calendar: glifo de marca no botão “Adicionar ao Google Agenda”.
+- `brand-whatsapp`: glifo vetorial da marca; referência consultada no SVG Repo / Simple Icons.
+- `brand-google-drive`: glifo da marca usado na importação.
+- `brand-google-calendar`: glifo da marca usado em “Adicionar ao Google Agenda”.
 
 ## Não fazer
 
-- Não desenhar aproximações de logos (ex.: balão genérico para representar WhatsApp).
-- Não misturar ícones preenchidos de marca com `.ma-icon`.
-- Não usar caracteres Unicode como `←` ou `✓` quando a função é de ícone de interface; usar o equivalente Lucide.
-- Não misturar famílias outline com espessuras diferentes na mesma interface.
+- Não desenhar aproximações de marcas, como balão genérico para WhatsApp.
+- Não inserir novos paths Lucide diretamente nos arquivos HTML; acrescente o símbolo uma vez em `/icons.svg`.
+- Não usar caracteres Unicode como `←`, `×`, `+` ou `✓` quando exercem função de ícone de interface.
+- Não misturar ícones outline de famílias diferentes.
+- Não usar CSS masks para substituir SVGs incorretos em telas individuais.
