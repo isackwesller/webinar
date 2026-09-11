@@ -1,4 +1,4 @@
-name: Deploy Meet Aula prototype
+name: Deploy Live Class prototype
 
 on:
   push:
